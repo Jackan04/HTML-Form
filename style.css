@@ -5,86 +5,140 @@
     font-style: normal;
 }
 
-:root{
-    --padding: 20px;
+:root {
+    --padding: 15px;
     --border-radius: 10px;
     --para-size: 16px;
     --background-color: #F9FAFB;
+    --button-color: #596D48;
+    --shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-html{
+html {
     font-family: sans-serif;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: var(--background-color);
+    margin: 0;
 }
 
-main{
+main {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
 }
 
-#logo-text{
-    font-family: "Norse-Bold";
+#background-container {
+    position: relative;
 }
 
-#background-container > img{
+#background-container > img {
     max-width: 600px;
     height: 100vh;
 }
 
-#logo-container{
+#logo-container {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px 100px;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
-#form-container{
+#logo {
+    max-width: 100px;
+}
+
+#logo-text {
+    font-family: "Norse-Bold";
+    color: white;
+    font-size: 100px;
+}
+
+#form-container {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-
 }
 
-#form-container > form{
+#form-container > form {
     display: flex;
     flex-direction: column;
     padding: 20px;
     gap: 2rem;
 }
 
-form > fieldset{
+form {
     display: flex;
-    
+    flex-direction: column;
+    align-items: center;
     gap: 2rem;
 }
 
-#form-content > fieldset{
+fieldset {
+    border: none;
     display: flex;
-    flex-direction: row;
     gap: 2rem;
+    padding: 30px 60px;
+    border-radius: var(--border-radius);
+}
+
+#form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
     padding: var(--padding);
 }
 
-#form-content > fieldset > div{
+#form-content > fieldset > div {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     font-size: var(--para-size);
 }
 
-#action-container{
+#action-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 1rem;
 }
 
+#btn-create-account {
+    background-color: var(--button-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    cursor: pointer;
+}
 
+input {
+    border: 1px solid #000;
+    padding: 5px;
+    border-radius: 5px;
+}
 
+input:invalid {
+    border-color: #FF0032;
+}
+
+input:valid {
+    border-color: #0078D4;
+}
+
+a {
+    color: var(--button-color);
+    text-decoration: none;
+}
